@@ -1,6 +1,6 @@
 def approach1():
     while True:
-        user_input = input("what do you wanna do: ").strip().lower()
+        user_input = input("(approach 1) what do you wanna do: ").strip().lower()
         call = sorted("call next")
         add = sorted("add")
         exit = sorted("exit")
@@ -19,7 +19,7 @@ def approach1():
 
 def approach2():
     while True:
-        user_input = input("what do you wanna do: ").strip().lower()
+        user_input = input("(approach 2) what do you wanna do: ").strip().lower()
         call = sorted("call next")
         add = sorted("add")
         exit = sorted("exit")
@@ -45,7 +45,7 @@ def approach2():
             c += 0.75
         else:
             pass
-        print(f'{a} {b} {c}')
+        #print(f'{a} {b} {c}')
         if a > b and a > c:
             spell_check = "call next"
         elif b > a and b > c:
@@ -53,19 +53,22 @@ def approach2():
         elif c > a and c > b:
             spell_check = "exit"
         elif c < 1 and b < 1 and a < 1:
-            spell_check = "i'm not sure what you mean... :("
+            spell_check = "i'm not sure what you mean..."
         
-        if spell_check == "i'm not sure what you mean... :(":
+        if spell_check == "i'm not sure what you mean...":
             print(spell_check)
         else:
             while True:
                 yes_no = input(f"did you mean {spell_check}? (Y/N)").upper().strip()
                 if yes_no[0] == "Y":
                     print(f"gotcha, running {spell_check}")
+                    break
                 elif yes_no[0] == "N":
                     print("i'll do better next time!")
+                    break
                 else:
                     print("invalid input!!!")
 
-
-approach2()
+while True:
+    approach1()
+    approach2()
