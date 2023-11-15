@@ -69,6 +69,5 @@ def approach2():
                 else:
                     print("invalid input!!!")
 
-while True:
-    approach1()
-    approach2()
+approach1()
+approach2()
