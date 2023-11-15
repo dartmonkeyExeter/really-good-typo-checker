@@ -33,27 +33,39 @@ def approach2():
             if i in call:
                 a += 1
             if i in add:
-                b += 1
+                b += 1.5
             if i in exit:
-                c += 1
+                c += 1.25
         
         if len(user_input) > 5 and len(user_input) < 12:
-            a += 1
-        elif len(user_input) < 5 and len(user_input) < 3:
-            b += 1
+            a += 0.5
+        elif len(user_input) < 5 and len(user_input) > 3:
+            b += 0.5
         elif len(user_input) <= 3 and len(user_input) >= 2:
-            c += 1
+            c += 0.75
         else:
             pass
-        
+        print(f'{a} {b} {c}')
         if a > b and a > c:
-            print("call next")
+            spell_check = "call next"
         elif b > a and b > c:
-            print("add")
+            spell_check = "add"
         elif c > a and c > b:
-            print("exit")
+            spell_check = "exit"
+        elif c < 1 and b < 1 and a < 1:
+            spell_check = "i'm not sure what you mean... :("
+        
+        if spell_check == "i'm not sure what you mean... :(":
+            print(spell_check)
         else:
-            print("invalid input")
+            while True:
+                yes_no = input(f"did you mean {spell_check}? (Y/N)").upper().strip()
+                if yes_no[0] == "Y":
+                    print(f"gotcha, running {spell_check}")
+                elif yes_no[0] == "N":
+                    print("i'll do better next time!")
+                else:
+                    print("invalid input!!!")
 
-approach1()
+
 approach2()
